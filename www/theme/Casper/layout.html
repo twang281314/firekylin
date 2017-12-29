@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{options.favicon_url |default('/static/img/firekylin.jpg')}}"> {% if options.favicon %}
+    <link rel="shortcut icon" href="{{options.favicon}}" type="image/x-icon">{% endif %}
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.html">
+    <link rel=search type="application/opensearchdescription+xml" href="/opensearch.xml" title="{{ options.title }}"> {% if options.keywords %}
+    <meta name="keywords" content="{{options.keywords}}">{% endif %} {% if options.description %}
+    <meta name="description" content="{{options.description}}">{% endif %}
+    <!-- <link rel="stylesheet" href="/theme/Casper/res/css/global.css" type="text/css"> -->
+    <link rel="stylesheet" href="/theme/Casper/res/css/screen.css" type="text/css">
+</head>
+
+<body class="home-template">
+    <div class="site-wrapper">
+
+        {% block content %}
+        {% endblock %}
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright">
+                    <a href="https://demo.firekylin.io">Firekylin</a> © 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="https://demo.firekylin.io">Latest Posts</a>
+                    <a href="https://www.facebook.com/firekylin" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/firekylin" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://firekylin.org" target="_blank" rel="noopener">Firekylin</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=d3d79e04f4"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/infinitescroll.js?v=d3d79e04f4"></script> -->
+</body>
+</html>
