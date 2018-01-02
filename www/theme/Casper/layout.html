@@ -15,15 +15,14 @@
     <link rel="stylesheet" href="/theme/Casper/res/css/screen.css" type="text/css">
 </head>
 
-<body class="home-template">
+<body class="{{body_class}}">
     <div class="site-wrapper">
-
         {% block content %}
         {% endblock %}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright">
-                    <a href="https://demo.firekylin.io">Firekylin</a> © 2017</section>
+                    <a href="https://demo.firekylin.io">Firekylin</a> © 2018</section>
                 <nav class="site-footer-nav">
                     <a href="https://demo.firekylin.io">Latest Posts</a>
                     <a href="https://www.facebook.com/firekylin" target="_blank" rel="noopener">Facebook</a>
@@ -35,7 +34,9 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=d3d79e04f4"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/infinitescroll.js?v=d3d79e04f4"></script> -->
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=d3d79e04f4"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/infinitescroll.js?v=d3d79e04f4"></script>
+    {% block page_self_script %}
+    {% endblock %}
 </body>
 </html>
