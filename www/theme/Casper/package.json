@@ -5,8 +5,14 @@
     {
       "type": "text",
       "name": "sidebarBackground",
-      "label": "主题左侧背景图片",
-      "help": "在这里，输入您需要在顶部显示的图片的URL地址。 图像宽度应大于 250 像素。 建议宽度 500 像素。 建议高度 1200 像素。"
+      "label": "主题背景图片",
+      "help": "在这里，输入您需要在顶部显示的图片的URL地址。"
+    },
+    {
+      "type": "text",
+      "name": "headerLogo",
+      "label": "主题Logo",
+      "help": "在这里，输入您需要在顶部显示的Logo图片的URL地址。"
     },
     {
       "type": "color",

@@ -1,9 +1,10 @@
 {% extends './layout.html' %}
 {% block title -%}
-{% if tag %}标签 {{tag}} - {% elif cate %}分类 {{cate}} - {% endif %}{{options.title}}
+{% set body_class = "home-template" %}
+{% if tag %} {% set body_class = "" %}标签 {{tag}} - {% elif cate %}分类 {{cate}} - {% endif %}{{options.title}}
 {%- endblock %} 
 {% block content %}
-{% if tag %} {% set body_class = "tag-template" %}
+{% if tag %}
 <div class="site-wrapper">
     <header class="site-header outer ">
         <div class="inner">
@@ -54,7 +55,7 @@
         <div class="inner">
            <div class="post-feed">
             {% for post in posts %}
-            <article class="post-card post tag-getting-started">
+            <article class="post-card post">
                 {% if post.options.featuredImage %}
                 <a class="post-card-image-link" href="/post/{{post.pathname}}.html">
                     <div class="post-card-image" style="background-image: url({{post.options.featuredImage}})"></div>
@@ -84,14 +85,15 @@
         </div>
     </main>
 </div>
-{% else %} {% set body_class = "home-template" %}
-<header class="site-header outer " style="background-image: url(/theme/Casper/res/images/blog-cover.jpg)">
+{% else %} 
+
+<header class="site-header outer " style="background-image: url('{{themeConfig.sidebarBackground}}')">
     <div class="inner">
         <div class="site-header-content">
             <h1 class="site-title">
-                <img class="site-logo" src="/theme/Casper/res/images/firekylin-transparent-for-dark-bg.png" alt="Firekylin">
+                <img class="site-logo" src="{{themeConfig.headerLogo}}" alt="Firekylin">
             </h1>
-            <h2 class="site-description">The professional publishing platform</h2>
+            <h2 class="site-description">{{options.description}}</h2>
         </div>
         <nav class="site-nav">
             <div class="site-nav-left">
@@ -133,7 +135,7 @@
     <div class="inner">
         <div class="post-feed">
             {% for post in posts %}
-            <article class="post-card post tag-getting-started">
+            <article class="post-card post">
                 {% if post.options.featuredImage %}
                 <a class="post-card-image-link" href="/post/{{post.pathname}}.html">
                     <div class="post-card-image" style="background-image: url({{post.options.featuredImage}})"></div>
