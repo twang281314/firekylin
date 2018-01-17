@@ -22,9 +22,10 @@
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <section class="copyright">
-                    <a href="/">{{options.title}}</a> © 2018</section>
+                    <a href="/">{{options.title}}</a> © 2018<br>
+                     Proudly published with <a href="https://firekylin.org" target="_blank" rel="noopener">Firekylin</a></section>
                 <nav class="site-footer-nav">
-                    <a href="https://demo.firekylin.io">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     <a href="https://www.facebook.com/firekylin" target="_blank" rel="noopener">Facebook</a>
                     <a href="https://twitter.com/firekylin" target="_blank" rel="noopener">Twitter</a>
                     <a href="https://firekylin.org" target="_blank" rel="noopener">Firekylin</a>
@@ -35,7 +36,10 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=d3d79e04f4"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/infinitescroll.js?v=d3d79e04f4"></script>
+    <script>
+        var maxPages = parseInt('{{pagination.totalPages}}');
+    </script>
+    <script src="/theme/Casper/res/js/infinitescroll.js"></script>
     {% block page_self_script %}
     {% endblock %}
 </body>
