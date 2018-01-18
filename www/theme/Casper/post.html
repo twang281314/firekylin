@@ -80,8 +80,10 @@
 </div>
 {% endblock %}
 {% block page_self_script %}
-<link href="https://cdn.bootcss.com/prism/9000.0.1/themes/prism-coy.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/prism/9000.0.1/prism.min.js"></script>t>
+<link href="/theme/Casper/res/css/prism.css" rel="stylesheet">
+<script src="/theme/Casper/res/js/prism.js"></script>
+<link href="https://cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
     // Start fitVids
@@ -139,5 +141,22 @@
 
     update();
 });
+
+$('.post-full-content').find('img').each(function () {
+            var alt = this.alt;
+            $(this).wrap('<a data-fancybox="gallery" href="' + this.src + '" title="' + alt +
+                '" class="fancybox" rel="gallery" />');
+        });
+        (function ($) {
+            $('.fancybox').fancybox({
+                transitionIn: 'elastic',
+                transitionOut: 'elastic'
+            });
+        })(jQuery);
+        $("a").bind("focus", function () {
+            if (this.blur) {
+                this.blur()
+            };
+        });
 </script>
 {% endblock %}
